@@ -20,7 +20,7 @@ pipeline {
     }
 
     tools{
-       maven 'maven-3.8.6'
+       maven 'maven-3.9.4'
     }
     stages {
          stage('Stage One') {
@@ -29,7 +29,7 @@ pipeline {
                       echo Hello World
                       echo Welcome to Jenkins
                       echo environment URL is ${ENV_URL}
-                      mvn --version
+                      z
                       '''
             }
          }
