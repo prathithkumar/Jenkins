@@ -37,9 +37,9 @@ pipeline {
                             echo environment URL is ${ENV_URL}
                             mvn -v
                             sleep 10
-                            '''
-                        }
+                        '''
                     }
+                }
                 stage('Stage Two') {
                   environment {                                    // Declaring Vars in staging level also
                         BATCH = "devops"
@@ -48,8 +48,8 @@ pipeline {
                         sh "echo stage two Demo"
                         sh "echo training is ${BATCH}"
                         sh "sleep 30"
-                        }
                     }
+                }
                stage('Stage Three') {
                     steps {
                         sh "echo Stage Three Demo"
