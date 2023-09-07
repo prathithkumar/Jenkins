@@ -4,6 +4,16 @@ pipeline {
         ENV_URL = "pipeline.google.com"
         SSH_CRED = credentials('SSH_CRED')
     }
+
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins' , description: 'Who should I say hello too?')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+        booleanParam(name: 'TOOGLE', defaultValue: true, description: 'Toogle this value')
+        choice(name: 'CHOICE', choices: ['ONE','Two','Three'],description: 'Pick something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+
+
+    }
     stages {
          stage('Stage One') {
             steps {
