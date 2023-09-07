@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environemnt {
+    environment {
         ENV_URL = "pipeline.google.com"
     }
     stages {
@@ -9,7 +9,7 @@ pipeline {
                 sh '''
                       echo Hello World
                       echo Welcome to Jenkins
-                      echo environemnt URL is ${ENV_URL}
+                      echo environment URL is ${ENV_URL}
                       
                       '''
             }
