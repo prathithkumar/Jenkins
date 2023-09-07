@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environment {
+    environment {                                            // Pipeline Variables: ALL the stages of the pipeline can use it.
         ENV_URL = "pipeline.google.com"
     }
     stages {
@@ -15,8 +15,12 @@ pipeline {
             }
          }
           stage('Stage Two') {
+            environment {
+                BATCH = "devops"
+            }
             steps {
                 sh "echo stage two Demo"
+                sh "echo training is ${BATCH}"
             }
          }
           stage('Stage Three') {
