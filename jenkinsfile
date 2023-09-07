@@ -25,31 +25,31 @@ pipeline {
     stages {
         stage ('Parallel Demo') {
             Parallel {
-                    stage('Stage One') {
-                        steps {
-                            sh '''
-                                echo Hello World
-                                echo Welcome to Jenkins
-                                echo environment URL is ${ENV_URL}
-                                mvn -v
-                                sleep 10
-                                '''
+                stage('Stage One') {
+                    steps {
+                        sh '''
+                            echo Hello World
+                            echo Welcome to Jenkins
+                            echo environment URL is ${ENV_URL}
+                            mvn -v
+                            sleep 10
+                            '''
                         }
                     }
-                    stage('Stage Two') {
-                        environment {                                    // Declaring Vars in staging level also
-                            BATCH = "devops"
+                stage('Stage Two') {
+                  environment {                                    // Declaring Vars in staging level also
+                        BATCH = "devops"
                         }
                         steps {
-                            sh "echo stage two Demo"
-                            sh "echo training is ${BATCH}"
-                            sh "sleep 30"
+                        sh "echo stage two Demo"
+                        sh "echo training is ${BATCH}"
+                        sh "sleep 30"
                         }
                     }
-                    stage('Stage Three') {
-                        steps {
-                            sh "echo Stage Three Demo"
-                            sh "sleep 50"
+                stage('Stage Three') {
+                    steps {
+                        sh "echo Stage Three Demo"
+                        sh "sleep 50"
                         }
                     }
             }
