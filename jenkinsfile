@@ -23,7 +23,7 @@ pipeline {
        maven 'maven-3.9.4'
     }
     stages {
-        stage ('Parallel Demo') {
+        stage ('Paralle Demo') {
             Parallel {
                 stage('Stage One') {
                     steps {
