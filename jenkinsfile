@@ -6,21 +6,22 @@ pipeline {
     stages {
          stage('Stage One') {
             steps {
-                sh '''echo Hello World
-                      echo Welcome to Jenkins'''
+                sh '''
+                      echo Hello World
+                      echo Welcome to Jenkins
                       echo environemnt URL is ${ENV_URL}
+                      
+                      '''
             }
          }
           stage('Stage Two') {
             steps {
-                sh '''echo Hello World
-                echo Welcome to Jenkins'''
+                sh "echo stage two Demo"
             }
          }
           stage('Stage Three') {
             steps {
-                sh '''echo Hello World
-                echo Welcome to Jenkins'''
+                sh "echo Stage Three Demo"
             }
          }
     }
