@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environemnt{
+    environemnt {
         ENV_URL = "pipeline.google.com"
     }
     stages {
