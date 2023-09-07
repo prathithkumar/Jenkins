@@ -26,6 +26,9 @@ pipeline {
         stage ('Paralle Demo') {
             Parallel {
                 stage('Stage One') {
+                    environment{
+                        ENV_URL = "stage.google.com"
+                    }
                     steps {
                         sh '''
                             echo Hello World
@@ -46,12 +49,12 @@ pipeline {
                         sh "sleep 30"
                         }
                     }
-                stage('Stage Three') {
-                    steps {
-                        sh "echo Stage Three Demo"
-                        sh "sleep 50"
-                        }
+            stage('Stage Three') {
+                steps {
+                    sh "echo Stage Three Demo"
+                    sh "sleep 50"
                     }
+                }
             }
         }        
     }
