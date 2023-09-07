@@ -29,7 +29,6 @@ pipeline {
                       echo Hello World
                       echo Welcome to Jenkins
                       echo environment URL is ${ENV_URL}
-                      z
                       '''
             }
          }
