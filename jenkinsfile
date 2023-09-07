@@ -22,11 +22,12 @@ pipeline {
     tools{
        maven 'maven-3.9.4'
     }
+
     stages {
-        stage ('Paralle Demo') {
+        stage('Paralle Demo') {
             Parallel {
                 stage('Stage One') {
-                    environment{
+                    environment {
                         ENV_URL = "stage.google.com"
                     }
                     steps {
@@ -49,10 +50,10 @@ pipeline {
                         sh "sleep 30"
                         }
                     }
-            stage('Stage Three') {
-                steps {
-                    sh "echo Stage Three Demo"
-                    sh "sleep 50"
+               stage('Stage Three') {
+                    steps {
+                        sh "echo Stage Three Demo"
+                        sh "sleep 50"
                     }
                 }
             }
